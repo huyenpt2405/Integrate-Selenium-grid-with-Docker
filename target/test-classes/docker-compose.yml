@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+    selenium:
+      image: selenium/hub
+      ports:
+        - 4442:4442
+        - 4443:4443        
+        - 4444:4444
+    chrome:
+      image: selenium/node-chrome
+      shm_size: 2gb
+      depends_on:
+        - selenium
+      environment:
+        - SE_EVENT_BUS_HOST=selenium
+        - SE_EVENT_BUS_PUBLISH_PORT=4442
+        - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+        - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+        - SE_NODE_MAX_SESSIONS=10
+      ports:
+        - 59001:5900
+    firefox:
+      image: selenium/node-firefox
+      shm_size: 2gb
+      depends_on:
+        - selenium
+      environment:
+        - SE_EVENT_BUS_HOST=selenium
+        - SE_EVENT_BUS_PUBLISH_PORT=4442
+        - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+        - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+        - SE_NODE_MAX_SESSIONS=10
+      ports:
+        - 59011:5900
+    

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [NopCommerce]">
+  <test thread-count="2" parallel="tests" name="Run on Chrome(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.nopcommerce.user.LoginTest">
+        <methods>
+          <include name="Login_06_Success"/>
+          <include name="Login_01_Empty_Data"/>
+          <include name="Login_04_Existing_Email_Empty_Password"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="Login_02_Invalid_Email"/>
+          <include name="Login_03_Email_Not_Found"/>
+          <include name="Login_05_Existing_Email_Incorrect_Password"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.LoginTest -->
+    </classes>
+  </test> <!-- Run on Chrome(failed) -->
+  <test thread-count="2" parallel="tests" name="Run on Firefox(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.nopcommerce.user.LoginTest">
+        <methods>
+          <include name="Login_06_Success"/>
+          <include name="Login_01_Empty_Data"/>
+          <include name="Login_04_Existing_Email_Empty_Password"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="Login_02_Invalid_Email"/>
+          <include name="Login_03_Email_Not_Found"/>
+          <include name="Login_05_Existing_Email_Incorrect_Password"/>
+        </methods>
+      </class> <!-- com.nopcommerce.user.LoginTest -->
+    </classes>
+  </test> <!-- Run on Firefox(failed) -->
+</suite> <!-- Failed suite [NopCommerce] -->
