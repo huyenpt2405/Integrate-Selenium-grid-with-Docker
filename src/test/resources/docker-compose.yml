@@ -17,8 +17,6 @@ services:
         - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
         - SE_NODE_OVERRIDE_MAX_SESSIONS=true
         - SE_NODE_MAX_SESSIONS=10
-      ports:
-        - 59001:5900
     firefox:
       image: selenium/node-firefox
       shm_size: 2gb
@@ -30,6 +28,4 @@ services:
         - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
         - SE_NODE_OVERRIDE_MAX_SESSIONS=true
         - SE_NODE_MAX_SESSIONS=10
-      ports:
-        - 59011:5900
     
